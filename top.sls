@@ -1,0 +1,4 @@
+base:
+  '*lb*':
+    - haproxy
+    - letsencrypt
