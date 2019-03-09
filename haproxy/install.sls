@@ -21,4 +21,6 @@ push_null_backend:
   file.managed:
     - name: /etc/haproxy/errors/null.http
     - source: salt://haproxy/files/null.http
+    - user: haproxy
+    - group: haproxy
     - makedirs: True
