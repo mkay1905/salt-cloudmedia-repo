@@ -1,4 +1,4 @@
-certbot:
+git-core:
   pkg:
     - installed
 
