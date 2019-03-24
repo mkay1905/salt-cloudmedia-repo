@@ -1,4 +1,4 @@
-git-core:
+git:
   pkg:
     - installed
 
