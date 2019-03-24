@@ -9,6 +9,7 @@ haproxy_create_acl:
     - mode: ensure
     - content: |
         acl letsencrypt_check path_beg /.well-known/acme-challenge
+            redirect scheme https code 301 if !{ ssl_fc } !letsencrypt_check
             use_backend letsencrypt_backend if letsencrypt_check
     - indent: 4
     - after: default_backend         null

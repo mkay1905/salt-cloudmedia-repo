@@ -7,6 +7,14 @@ haproxy:
     - require:
       - pkg: haproxy
 
+haproxy_certs_directory:
+  file.directory:
+    - name: /etc/haproxy/certs
+    - user: haproxy
+    - group: haproxy
+    - mode: 755
+    - makedirs: True
+
 config_haproxy:
   file.managed:
     - name: /etc/haproxy/haproxy.cfg
