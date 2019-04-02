@@ -11,6 +11,14 @@ nginx:
     - require:
       - pkg: nginx
 
+www_html_dir:
+  file.directory:
+    - name: /var/www/html 
+    - user: nginx
+    - group: nginx
+    - mode: 755
+    - makedirs: True
+
 letsencrypt_config:
   file.managed:
     - name: /etc/nginx/conf.d/letsencrypt.conf
