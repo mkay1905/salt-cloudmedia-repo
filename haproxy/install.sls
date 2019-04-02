@@ -1,3 +1,11 @@
+push_null_backend:
+  file.managed:
+    - name: /etc/haproxy/errors/null.http
+    - source: salt://haproxy/files/null.http
+    - user: haproxy
+    - group: haproxy
+    - makedirs: True
+
 haproxy:
   pkg:
     - installed
@@ -13,14 +21,6 @@ haproxy_certs_directory:
     - user: haproxy
     - group: haproxy
     - mode: 755
-    - makedirs: True
-
-push_null_backend:
-  file.managed:
-    - name: /etc/haproxy/errors/null.http
-    - source: salt://haproxy/files/null.http
-    - user: haproxy
-    - group: haproxy
     - makedirs: True
 
 config_haproxy:
