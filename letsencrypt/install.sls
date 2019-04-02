@@ -24,7 +24,7 @@ letsencrypt_config:
     - name: /etc/nginx/conf.d/letsencrypt.conf
     - source: salt://letsencrypt/files/letsencrypt.conf
     - mode: 644
-    - watch_in:
+    - watch:
       - service: nginx
 
 config_letsencrypt:
@@ -32,5 +32,5 @@ config_letsencrypt:
     - name: /etc/nginx/nginx.conf
     - source: salt://letsencrypt/files/nginx.conf
     - mode: 644
-    - watch_in:
+    - watch:
       - service: nginx
