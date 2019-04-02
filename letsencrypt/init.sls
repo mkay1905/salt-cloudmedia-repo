@@ -1,4 +1,4 @@
 include:
   - letsencrypt.install
   - letsencrypt.configure
-  - configure_auto_renew
+  - letsencrypt.configure_auto_renew

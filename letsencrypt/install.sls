@@ -1,13 +1,17 @@
-git:
-  pkg:
-    - installed
+package_letsencrypt_need:
+  pkg.installed:
+    - pkgs:
+      - git
+      - bc
+      - nginx
+    - service.running:
+      - enable: True
 
 nginx:
   pkg:
     - installed
   service.running:
     - enable: True
-    - reload: True
     - require:
       - pkg: nginx
 
