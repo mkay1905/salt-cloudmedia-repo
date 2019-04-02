@@ -12,7 +12,7 @@ haproxy_create_acl:
             redirect scheme https code 301 if !{ ssl_fc } !letsencrypt_check
             use_backend letsencrypt_backend if letsencrypt_check
     - indent: 4
-    - after: #frontend_http
+    - after: '#frontend_http'
 
 haproxy_create_backend_letsencrypt:
   file.line:
