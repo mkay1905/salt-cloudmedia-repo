@@ -6,6 +6,8 @@ haproxy:
     - reload: True
     - require:
       - pkg: haproxy
+    - watch:
+      - file: /etc/haproxy/haproxy.cfg
 
 push_null_backend:
   file.managed:
@@ -30,5 +32,5 @@ config_haproxy:
     - user: haproxy
     - group: haproxy
     - mode: 644
-    - watch:
+    - require:
       - service: haproxy
